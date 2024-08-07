@@ -47,7 +47,7 @@ Amazon SageMaker domain
 8. Run the following command on the terminal to download the sample code from Github: 
 
 ```
-git clone https://github.com/aws-samples/social-media-post-generation
+git clone https://github.com/aws-samples/Build-a-multimodal-social-media-content-generator-using-Amazon-Bedrock.git
 ```
 
 ## Step 2: Embeddings Generation
