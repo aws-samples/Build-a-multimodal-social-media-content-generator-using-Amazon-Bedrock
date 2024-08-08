@@ -52,9 +52,9 @@ git clone https://github.com/aws-samples/Build-a-multimodal-social-media-content
 
 ## Step 2: Embeddings Generation
 
-1. Go to `embedding-generation` folder and run the notebook `synthetic-data-generation.ipynb`
+1. Go to `embedding-generation` folder and run the notebook `1. synthetic-data-generation.ipynb`
 
-2. Next, run the notebook `multimodal_embedding_generation.ipynb` to generate the multimodal embeddings and save on Amazon OpenSearch Serverless
+2. Next, run the notebook `2. multimodal_embedding_generation.ipynb` to generate the multimodal embeddings and save on Amazon OpenSearch Serverless
 
 
 ## Step 3: Running Streamlit app
@@ -65,7 +65,7 @@ git clone https://github.com/aws-samples/Build-a-multimodal-social-media-content
 
 ```
 cd streamlit-app
-pip install requirements.txt
+pip install -r requirements.txt
 ```
 
 3. Start the streamlit app:
@@ -74,7 +74,7 @@ pip install requirements.txt
 streamlit run app.py
 ```
 
-4. You can now open a new browser and go to the following url to start using the solcial media content creation app.
+4. You can now open a new browser and go to the following url to start using the social media content creation app.
 
 ```
 https://[USER-PROFILE-ID].studio.[REGION].sagemaker.aws/jupyter/default/proxy/8501/
@@ -84,7 +84,7 @@ https://[USER-PROFILE-ID].studio.[REGION].sagemaker.aws/jupyter/default/proxy/85
 
 - Delete the S3 bucket and data created
 
-- Delete the Amazon OperSearch Serverless Collection
+- Delete the Amazon OpenSearch Serverless Collection
 
 - Delete SageMaker JupyterLab Space
 

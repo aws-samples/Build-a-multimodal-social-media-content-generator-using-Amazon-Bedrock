@@ -1,6 +1,7 @@
 import json
 import boto3
 import random
+import time
 
 
 suffix = random.randrange(10000, 20000)
@@ -214,3 +215,10 @@ def delete_iam_role_and_policies():
     iam_client.delete_policy(PolicyArn=fm_policy_arn)
     iam_client.delete_policy(PolicyArn=oss_policy_arn)
     return 0
+
+def interactive_sleep(seconds: int):
+    dots = ''
+    for i in range(seconds):
+        dots += '.'
+        print(dots, end='\r')
+        time.sleep(1)

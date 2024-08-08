@@ -236,10 +236,22 @@ if image_enhanced and product_input and brand:
 # Similar posts retrieval 
 mapping_table = pd.read_csv('data_mapping.csv') 
 
+boto3_session = boto3.session.Session()
+region_name = boto3_session.region_name
+suffix = boto3.client('sts').get_caller_identity().get('Account')
+
+vector_store_name = f'social-media-{suffix}'
 index_name = "social-media-blog-img-text"
-host = "ljqs6g4p3shfkalo08se.us-east-1.aoss.amazonaws.com"
+
+aoss_client = boto3.client('opensearchserverless')
+response = aoss_client.batch_get_collection(names=[vector_store_name])
+collection_id = response['collectionDetails'][0]['id']
+
+host = collection_id + '.' + region_name + '.aoss.amazonaws.com'
+
+
+
 service = 'aoss'
-region_name = 'us-east-1'
 credentials = boto3.Session().get_credentials()
 awsauth = AWSV4SignerAuth(credentials, region_name, service)
 
