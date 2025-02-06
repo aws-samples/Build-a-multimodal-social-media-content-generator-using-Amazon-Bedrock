@@ -8,5 +8,3 @@ ps -Al | grep streamlit
 echo "Killing all processes running from streamlit"
 pkill -9 streamlit
 
-# Delete the file temp.txt
-rm temp.txt
